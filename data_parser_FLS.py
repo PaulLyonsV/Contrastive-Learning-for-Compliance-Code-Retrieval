@@ -14,7 +14,7 @@ class BuffaloComplianceDataset(Dataset):
         # Drop rows w/ na
         df = df.dropna(subset=['Code', 'Description', 'Comments'])
         
-        # Strip HTML tags and &nbsp (non-breaking space) from comments.
+        # Strip HTML tags and &nbsp from comments.
         # (comments are the contractor descriptions that are matched
         # to compliance codes in the dataset).
         df['Comments'] = df['Comments'].apply(self._clean_html)
